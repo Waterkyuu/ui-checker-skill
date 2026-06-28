@@ -1,6 +1,6 @@
 ---
 name: ui-checker
-description: Use this skill when reviewing front-end UI quality, especially when the user says the interface looks messy, inconsistent, amateurish, 草台, UI 混乱, 需要 UI 自检, or asks to check whether a page/app has consistent visual design without a designer. This skill audits UI consistency, spacing, typography, colors, component states, responsiveness, and basic interaction polish.
+description: Use this skill when reviewing front-end UI quality, especially when the user says the interface looks messy, inconsistent, amateurish, rough, visually chaotic, needs a UI self-check, or asks to check whether a page/app has consistent visual design without a designer. This skill audits UI consistency, spacing, typography, colors, component states, responsiveness, and basic interaction polish.
 ---
 
 # UI Checker Skill
@@ -11,21 +11,21 @@ This skill helps review a front-end page or app when there is no designer involv
 
 Core principle:
 
-> 统一、留白、对齐、反馈
+> Consistency, spacing, alignment, feedback
 
 Expanded principle:
 
-- 统一: typography, colors, buttons, icons, border radius, shadows, borders, component structure.
-- 留白: page padding, module spacing, item gap, card padding, density.
-- 对齐: text, icons, buttons, forms, lists, tables, headers.
-- 反馈: hover, active, focus-visible, disabled, loading, empty, error, success, permission states.
+- Consistency: typography, colors, buttons, icons, border radius, shadows, borders, component structure.
+- Spacing: page padding, module spacing, item gap, card padding, density.
+- Alignment: text, icons, buttons, forms, lists, tables, headers.
+- Feedback: hover, active, focus-visible, disabled, loading, empty, error, success, permission states.
 
 ## When to Use This Skill
 
 Use this skill when the user asks to:
 
 - Check a UI for inconsistency or visual messiness.
-- Review whether a front-end page looks 草台.
+- Review whether a front-end page looks rough or amateurish.
 - Improve UI quality in a vibe coding / AI-generated front-end project.
 - Create or enforce UI consistency rules without a designer.
 - Review screenshots, DOM/code, Tailwind classes, component files, or page implementations for UI quality.
@@ -33,11 +33,11 @@ Use this skill when the user asks to:
 
 Trigger examples:
 
-- “帮我检查这个 UI 为什么看起来很草台”
-- “这个页面 UI 有点乱，帮我找问题”
-- “没有设计师，怎么让前端 UI 统一一点”
-- “检查页面字体、按钮、图标、背景色是否统一”
-- “帮我写一个 UI 自检 prompt 给 agent”
+- "Help me check why this UI looks rough/amateurish."
+- "This page UI feels messy; help me find the problems."
+- "Without a designer, how can I make the front-end UI more consistent?"
+- "Check whether the page typography, buttons, icons, and background colors are consistent."
+- "Write a UI self-check prompt for an agent."
 
 ## Inputs
 
@@ -422,7 +422,7 @@ Required loading states:
 
 Button loading behavior:
 
-- Show “保存中...” / “提交中...” / “上传中...”
+- Show "Saving..." / "Submitting..." / "Uploading..."
 - Disable the button
 - Prevent repeated submits
 
@@ -436,10 +436,10 @@ API or page errors need:
 
 Recommended copy:
 
-- “加载失败，请稍后重试”
-- “保存失败，请重试”
-- “网络异常，请稍后再试”
-- “暂无操作权限”
+- "Loading failed. Please try again later."
+- "Save failed. Please try again."
+- "Network error. Please try again later."
+- "You do not have permission for this action."
 
 ### 21. Toast Consistency
 
@@ -447,11 +447,11 @@ Use one consistent feedback pattern for success, error, warning, and info.
 
 Recommended copy:
 
-- Success: “保存成功”
-- Failure: “保存失败，请重试”
-- Delete: “删除成功”
-- Network: “网络异常，请稍后再试”
-- Permission: “暂无操作权限”
+- Success: "Saved successfully."
+- Failure: "Save failed. Please try again."
+- Delete: "Deleted successfully."
+- Network: "Network error. Please try again later."
+- Permission: "You do not have permission for this action."
 
 Avoid mixing `alert`, toast, console-only errors, and inline red text randomly.
 
@@ -467,9 +467,9 @@ Dangerous operations must use confirmation:
 
 Recommended confirmation structure:
 
-- Title: “确认删除该项目？”
-- Description: “删除后无法恢复，请谨慎操作。”
-- Buttons: “取消” and “删除”
+- Title: "Delete this project?"
+- Description: "This action cannot be undone. Please proceed carefully."
+- Buttons: "Cancel" and "Delete"
 
 Danger style:
 
@@ -487,10 +487,10 @@ Recommended structure:
 
 Example:
 
-- 重命名
-- 下载
+- Rename
+- Download
 - Divider
-- 删除
+- Delete
 
 Recommended baseline:
 
@@ -597,31 +597,30 @@ Check:
 
 Use consistent action copy:
 
-- 新增
-- 编辑
-- 删除
-- 保存
-- 取消
-- 确认
-- 重试
-- 下载
-- 上传
-- 重命名
+- Add
+- Edit
+- Delete
+- Save
+- Cancel
+- Confirm
+- Retry
+- Download
+- Upload
+- Rename
 
 Avoid mixing:
 
 - OK
-- 确定
-- 确认
-- 提交
-- 确认提交
+- Confirm
+- Submit
+- Confirm submission
 
 Use consistent loading copy:
 
-- 加载中...
-- 保存中...
-- 提交中...
-- 上传中...
+- Loading...
+- Saving...
+- Submitting...
+- Uploading...
 
 ### 30. Page Max Width
 
@@ -730,8 +729,8 @@ The UI must never show:
 
 Use fallbacks:
 
-- `user.name || "未命名用户"`
-- `project.description || "暂无描述"`
+- `user.name || "Unnamed user"`
+- `project.description || "No description"`
 - `price ?? "-"`
 
 ### 37. Date and Number Formatting
@@ -740,7 +739,7 @@ Use consistent formats:
 
 - Date: `2026-06-26`
 - DateTime: `2026-06-26 14:30`
-- Relative time: `3 分钟前`
+- Relative time: `3 minutes ago`
 - Money: `¥1,299.00`
 - Count: `1,234`
 - Percent: `23.5%`
@@ -757,23 +756,23 @@ When users lack permission:
 
 Recommended copy:
 
-- “暂无权限操作该项目”
-- “请联系管理员开通权限”
+- "You do not have permission to operate on this project."
+- "Please contact an administrator to request access."
 
 ### 39. Table Action Column
 
 Recommended action pattern:
 
-- 查看
-- 编辑
-- 更多
+- View
+- Edit
+- More
 
-Put dangerous operations under “更多” when appropriate:
+Put dangerous operations under "More" when appropriate:
 
-- 重命名
-- 下载
+- Rename
+- Download
 - Divider
-- 删除
+- Delete
 
 ### 40. Complete Page States
 
@@ -801,9 +800,9 @@ Check:
 
 Recommended copy:
 
-- “未找到相关结果”
-- “请尝试调整关键词或筛选条件”
-- “重置筛选”
+- "No matching results found."
+- "Try adjusting your keywords or filters."
+- "Reset filters"
 
 ### 42. Page Header
 
@@ -814,9 +813,9 @@ Recommended structure:
 
 Example:
 
-- 项目管理
-- 管理你的所有项目和配置
-- 创建项目
+- Project Management
+- Manage all your projects and settings
+- Create project
 
 Mobile can stack vertically.
 
@@ -925,15 +924,15 @@ If the project does not have tokens, recommend creating them.
 
 When auditing a UI, respond in this structure:
 
-### UI 质量结论
+### UI Quality Conclusion
 
 Give a short assessment:
 
-- `不草台，只有少量一致性问题`
-- `中等混乱，主要问题是 spacing / typography / states`
-- `比较草台，需要先统一 token 和组件`
+- `Not amateurish; only a few consistency issues`
+- `Moderately messy; main issues are spacing / typography / states`
+- `Quite rough; tokens and components need to be unified first`
 
-### 主要问题
+### Main Issues
 
 List the most important problems by priority. For each issue include:
 
@@ -943,12 +942,12 @@ List the most important problems by priority. For each issue include:
 
 Example:
 
-1. 字体层级不统一
-   - 问题: 页面标题和模块标题都在使用不同的 text size。
-   - 影响: 用户无法快速判断信息层级。
-   - 建议: 固定页面标题为 `text-2xl font-semibold`，模块标题为 `text-lg font-medium`。
+1. Inconsistent typography hierarchy
+   - Problem: page titles and section titles use different text sizes.
+   - Impact: users cannot quickly understand the information hierarchy.
+   - Recommendation: set page titles to `text-2xl font-semibold` and section titles to `text-lg font-medium`.
 
-### 修复优先级
+### Fix Priority
 
 Group fixes into:
 
@@ -956,21 +955,21 @@ Group fixes into:
 - P1: Should fix, consistency and polish issue.
 - P2: Nice to improve, refinement issue.
 
-### 可直接给 Agent 的修复 Prompt
+### Copyable Fix Prompt for an Agent
 
 When useful, provide a copyable prompt for a coding agent. The prompt should be concrete and project-aware.
 
 Example:
 
 ```txt
-请检查并修复当前页面 UI 一致性问题：
-1. 统一同级标题、正文、辅助文字的字号、字重、颜色。
-2. 统一 Button 的高度、圆角、hover、disabled、loading 状态。
-3. 所有 flex 横向/纵向排列都必须显式设置 gap。
-4. 所有 hover 颜色变化都加 transition-colors duration-200。
-5. 统一图标颜色为普通 text-gray-500、hover text-gray-700、active text-primary、danger text-red-500。
-6. 检查 375px、768px、1440px 响应式，不允许横向溢出。
-不要改业务逻辑，只修复 UI 样式、组件复用和页面状态。
+Check and fix UI consistency issues on the current page:
+1. Unify font size, font weight, and color for same-level headings, body text, and helper text.
+2. Unify Button height, border radius, hover, disabled, and loading states.
+3. Every horizontal or vertical flex layout must explicitly set a gap.
+4. Add transition-colors duration-200 to all hover color changes.
+5. Unify icon colors as normal text-gray-500, hover text-gray-700, active text-primary, danger text-red-500.
+6. Check responsiveness at 375px, 768px, and 1440px; horizontal overflow is not allowed.
+Do not change business logic. Only fix UI styles, component reuse, and page states.
 ```
 
 ## Final Review Gate
